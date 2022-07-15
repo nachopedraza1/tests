@@ -1,0 +1,108 @@
+@import "../scss/mixins";
+@import "../scss/vars";
+
+.header {
+    z-index: 999;
+    background-color: #343636;
+
+    .header__top {
+        background-color: #2D2D33;
+    }
+}
+
+.fa-angle-right {
+    color: $danger;
+    opacity: 0;
+    transition: .3s;
+}
+
+.fa-angle-down {
+    color: $danger;
+}
+
+a:hover .fa-angle-right {
+    visibility: visible;
+    opacity: .8;
+    transition: .3s;
+}
+
+@include media-dw(768px) {
+    .menu {
+        z-index: 999;
+        position: absolute;
+        background-color: #202025;
+        margin-left: -100%;
+        list-style: none;
+        transition: all 0.3s;
+    }
+}
+
+
+
+.menu-active {
+    margin-left: 0;
+}
+
+.submenu {
+    z-index: 998;
+    position: absolute;
+    background-color: #2d2d33;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.menu li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.4s;
+}
+
+.search {
+    position: relative;
+    border: 1px solid #ffffff;
+    background: #ffffff;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 100%;
+
+    @include media-up(768px) {
+        width: 40%;
+    }
+
+    .searchTerm {
+        width: 100%;
+        border: none;
+        padding: 5px;
+        height: 45px;
+        outline: none;
+    }
+
+    .searchButton {
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .subBusqueda {
+        z-index: 1;
+        width: 100%;
+        outline: 1px solid #ffffff;
+        position: absolute;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background: #ffffff;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+
+    .active {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.3s;
+    }
+}
